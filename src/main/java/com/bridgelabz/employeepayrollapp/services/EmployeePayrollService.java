@@ -28,14 +28,17 @@ public class EmployeePayrollService  implements IEmployeePayrollService{
 	public EmployeePayrollData createEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
 		// TODO Auto-generated method stub
 		EmployeePayrollData  employeePayrollData = null;
-		employeePayrollData = new EmployeePayrollData(1, employeePayrollDTO);
+		employeePayrollData = new EmployeePayrollData(employeePayrollList.size()+1, employeePayrollDTO);
+		employeePayrollList.add(employeePayrollData);
 		return employeePayrollData;
 	}
 
 	@Override
 	public EmployeePayrollData updateEmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO) {
-		EmployeePayrollData employeePayrollData = null;
-		employeePayrollData = new EmployeePayrollData(empId,  employeePayrollDTO);
+		EmployeePayrollData employeePayrollData = this.getEmployeePayrollDataById(empId);
+		employeePayrollData.setName(employeePayrollDTO.name);
+		employeePayrollData.setSalary(employeePayrollDTO.salary);
+		employeePayrollList.set(empId-1,  employeePayrollData);
 		return employeePayrollData;
 	}
 
