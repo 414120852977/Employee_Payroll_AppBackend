@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
 import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
-import com.bridgelabz.employeepayrollappdto.EmployeePayrollDTO;
 
 @Service
 public class EmployeePayrollService  implements IEmployeePayrollService{

@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
+import com.bridgelabz.employeepayrollapp.dto.ResponseDTO;
 import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 import com.bridgelabz.employeepayrollapp.services.IEmployeePayrollService;
-import com.bridgelabz.employeepayrollappdto.EmployeePayrollDTO;
-import com.bridgelabz.employeepayrollappdto.ResponseDTO;
 
 @RestController
 @RequestMapping("/employeepayrollservice")
@@ -31,6 +31,7 @@ public class EmployeePayrollController {
 	List<EmployeePayrollData> empDataList = null;
 	empDataList = employeePayrollService.getEmployeePayrollData();
 	ResponseDTO resDTO = new ResponseDTO("Get Call Success",empDataList );
+	
 	return new ResponseEntity<ResponseDTO>(resDTO, HttpStatus.OK);
 	}
 	
