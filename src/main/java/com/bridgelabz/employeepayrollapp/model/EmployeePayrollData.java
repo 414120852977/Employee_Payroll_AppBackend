@@ -1,47 +1,39 @@
 package com.bridgelabz.employeepayrollapp.model;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
 
-public class EmployeePayrollData {
+import lombok.Data;
+
+public @Data class EmployeePayrollData {
 	private int employeeId;
 	private String name;
 	private long salary;
+	private String gender;
+	public LocalDate startDate;
+	public String note;
+	public String profilePic;
+	public String department;
 	public EmployeePayrollData() {
 	}
-	public EmployeePayrollData(int employeeId, String name, long salary) {
+	public EmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO) {
 		super();
-		this.employeeId = employeeId;
-		this.name = name;
-		this.salary = salary;
+		this.employeeId = empId;
+		this.updateEmployeePayrollData(employeePayrollDTO);
+		
 	}
-	public EmployeePayrollData(int i, EmployeePayrollDTO employeePayrollDTO) {
-		// TODO Auto-generated constructor stub
+	public void updateEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
+		this.name = employeePayrollDTO.name;
+		this.salary = employeePayrollDTO.salary;
+		this.gender = employeePayrollDTO.gender;
+		this.startDate = employeePayrollDTO.startDate;
+		this.note = employeePayrollDTO.note;
+		this.profilePic = employeePayrollDTO.profilePic;
+		this.department = employeePayrollDTO.department;
 	}
-	public int getEmployeeId() {
-		return employeeId;
-	}
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public long getSalary() {
-		return salary;
-	}
-	public void setSalary(long salary) {
-		this.salary = salary;
-	}
-	@Override
-	public String toString() {
-		return "EmployeePayrollData [employeeId=" + employeeId + ", name=" + name + ", salary=" + salary
-				+ ", getEmployeeId()=" + getEmployeeId() + ", getName()=" + getName() + ", getSalary()=" + getSalary()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
-	}
+	
 	
 	
 	
