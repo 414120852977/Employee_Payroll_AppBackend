@@ -29,7 +29,7 @@ public @Data class EmployeePayrollData {
 	public String note;
 	public String profilePic;
 	
-	@ElementCollection
+	//@ElementCollection
 	@CollectionTable(name = "employee_department", joinColumns = @JoinColumn(name = "id"))
 	@Column(name = "department")
 	public String department;
@@ -41,6 +41,10 @@ public @Data class EmployeePayrollData {
 		this.updateEmployeePayrollData(employeePayrollDTO);
 		
 	}
+	
+	public EmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
+		// TODO Auto-generated constructor stub
+	}
 	public void updateEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
 		this.name = employeePayrollDTO.name;
 		this.salary = employeePayrollDTO.salary;
@@ -50,6 +54,7 @@ public @Data class EmployeePayrollData {
 		this.profilePic = employeePayrollDTO.profilePic;
 		this.department = employeePayrollDTO.department;
 	}
+	
 	
 	
 	

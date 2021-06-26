@@ -19,45 +19,41 @@ public class EmployeePayrollService  implements IEmployeePayrollService{
 
 		@Autowired
 		private EmployeePayrollRepository employeeRepository;
-	private List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
+	
 	
 	@Override
 	public List<EmployeePayrollData> getEmployeePayrollData() {
 		
-		return employeePayrollList;
+		return employeeRepository.findAll();
 	}
 
 	@Override
 	public EmployeePayrollData getEmployeePayrollDataById(int empId) {
-		return employeePayrollList.stream()
-				.filter(empData -> empData.getEmployeeId() == empId)
-				.findFirst()
-				.orElseThrow(() -> new EmployeePayrollException("Employee not found"));
+		return employeeRepository
+				.findById(empId)
+				.orElseThrow(() -> new EmployeePayrollException("Employee with empId" + empId + "does not exist.."));
 	}
 
 	@Override
 	public EmployeePayrollData createEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
 		// TODO Auto-generated method stub
 		EmployeePayrollData  employeePayrollData = null;
-		employeePayrollData = new EmployeePayrollData(employeePayrollList.size()+1, employeePayrollDTO);
+		employeePayrollData = new EmployeePayrollData(employeePayrollDTO);
 		log.debug("Emp Data:"+employeePayrollData.toString());
-		employeePayrollList.add(employeePayrollData);
 		return employeeRepository.save(employeePayrollData);
 	}
 
 	@Override
 	public EmployeePayrollData updateEmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO) {
 		EmployeePayrollData employeePayrollData = this.getEmployeePayrollDataById(empId);
-		employeePayrollData.setName(employeePayrollDTO.name);
-		employeePayrollData.setSalary(employeePayrollDTO.salary);
-		employeePayrollList.set(empId-1,  employeePayrollData);
-		return employeePayrollData;
+		employeePayrollData.updateEmployeePayrollData(employeePayrollDTO);
+		return employeeRepository.save(employeePayrollData);
 	}
 
 	@Override
 	public void deleteEmployeePayrollData(int empId) {
-		// TODO Auto-generated method stub
-		employeePayrollList.remove(empId-1);
+		EmployeePayrollData employeePayrollData = this.getEmployeePayrollDataById(empId);
+		employeeRepository.delete(employeePayrollData);
 	}
 
 }

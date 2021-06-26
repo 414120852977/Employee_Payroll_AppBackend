@@ -1366,3 +1366,177 @@ Caused by: org.hibernate.AnnotationException: Illegal attempt to map a non colle
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.8.jar:5.3.8]
 	... 21 common frames omitted
 
+2021-06-26 08:12:03.486  INFO 1848 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on DESKTOP-RLRGP4P with PID 1848 (C:\Users\ashok\EmployeePayrollApp\target\classes started by ashok in C:\Users\ashok\EmployeePayrollApp)
+2021-06-26 08:12:03.516 DEBUG 1848 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-26 08:12:03.518  INFO 1848 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-26 08:12:06.192  WARN 1848 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-26 08:12:08.629 ERROR 1848 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.bridgelabz.employeepayrollapp.model.EmployeePayrollData.department
+2021-06-26 08:12:08.630  WARN 1848 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.bridgelabz.employeepayrollapp.model.EmployeePayrollData.department
+2021-06-26 08:12:08.882 ERROR 1848 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.bridgelabz.employeepayrollapp.model.EmployeePayrollData.department
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.1.jar:2.5.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.1.jar:2.5.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.1.jar:2.5.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.1.jar:2.5.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.1.jar:2.5.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) ~[spring-boot-2.5.1.jar:2.5.1]
+	at com.bridgelabz.employeepayrollapp.EmployeePayrollAppApplication.main(EmployeePayrollAppApplication.java:13) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.1.jar:2.5.1]
+Caused by: org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.bridgelabz.employeepayrollapp.model.EmployeePayrollData.department
+	at org.hibernate.cfg.annotations.CollectionBinder.getCollectionBinder(CollectionBinder.java:323) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:1956) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:979) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:806) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:248) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.8.jar:5.3.8]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.8.jar:5.3.8]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.8.jar:5.3.8]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.8.jar:5.3.8]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 21 common frames omitted
+
+2021-06-26 08:12:51.261  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on DESKTOP-RLRGP4P with PID 14276 (C:\Users\ashok\EmployeePayrollApp\target\classes started by ashok in C:\Users\ashok\EmployeePayrollApp)
+2021-06-26 08:12:51.270 DEBUG 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-26 08:12:51.271  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-26 08:12:53.362  WARN 14276 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-26 08:12:56.298  WARN 14276 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-26 08:12:56.777  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 6.088 seconds (JVM running for 7.147)
+2021-06-26 08:12:56.782  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll started in COMMON Environment
+2021-06-26 08:12:56.783  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is root 
+2021-06-26 08:13:30.502 ERROR 14276 --- [http-nio-8091-exec-2] c.b.e.e.EmployeePayrollExceptionHandler  : Invalid Date Format
+
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "2020-12-31": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '2020-12-31' could not be parsed at index 10; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "2020-12-31": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '2020-12-31' could not be parsed at index 10
+ at [Source: (PushbackInputStream); line: 5, column: 17] (through reference chain: com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO["startDate"])
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:389) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:342) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:185) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:158) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:131) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:170) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1063) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "2020-12-31": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '2020-12-31' could not be parsed at index 10
+ at [Source: (PushbackInputStream); line: 5, column: 17] (through reference chain: com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO["startDate"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1851) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1079) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176) ~[jackson-datatype-jsr310-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:166) ~[jackson-datatype-jsr310-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:91) ~[jackson-datatype-jsr310-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:37) ~[jackson-datatype-jsr310-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:402) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:195) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4593) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3601) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:378) ~[spring-web-5.3.8.jar:5.3.8]
+	... 51 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '2020-12-31' could not be parsed at index 10
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2051) ~[na:na]
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1953) ~[na:na]
+	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:164) ~[jackson-datatype-jsr310-2.12.3.jar:2.12.3]
+	... 60 common frames omitted
+
+2021-06-26 08:13:30.568  WARN 14276 --- [http-nio-8091-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "2020-12-31": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '2020-12-31' could not be parsed at index 10; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "2020-12-31": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '2020-12-31' could not be parsed at index 10
+ at [Source: (PushbackInputStream); line: 5, column: 17] (through reference chain: com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO["startDate"])]
+2021-06-26 08:13:47.697 DEBUG 14276 --- [http-nio-8091-exec-3] c.b.e.c.EmployeePayrollController        : Employee DTO:EmployeePayrollDTO(name=Sundar, salary=40000, gender=male, startDate=2020-12-31, note=Google Ceo, profilePic=../assets/profile-images/Ellipse -3.png, department=it)
+2021-06-26 08:13:47.698 DEBUG 14276 --- [http-nio-8091-exec-3] c.b.e.services.EmployeePayrollService    : Emp Data:EmployeePayrollData(employeeId=0, name=null, salary=0, gender=null, startDate=null, note=null, profilePic=null, department=null)
+2021-06-26 08:14:47.009  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on DESKTOP-RLRGP4P with PID 14276 (C:\Users\ashok\EmployeePayrollApp\target\classes started by ashok in C:\Users\ashok\EmployeePayrollApp)
+2021-06-26 08:14:47.009 DEBUG 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-26 08:14:47.010  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-26 08:14:47.666  WARN 14276 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-26 08:14:48.258  WARN 14276 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-26 08:14:48.407  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.449 seconds (JVM running for 118.777)
+2021-06-26 08:14:48.410  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll started in COMMON Environment
+2021-06-26 08:14:48.411  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is root 
+2021-06-26 08:14:59.730 DEBUG 14276 --- [http-nio-8091-exec-2] c.b.e.c.EmployeePayrollController        : Employee DTO:EmployeePayrollDTO(name=Sundar, salary=40000, gender=male, startDate=2020-12-31, note=Google Ceo, profilePic=../assets/profile-images/Ellipse -3.png, department=it)
+2021-06-26 08:14:59.731 DEBUG 14276 --- [http-nio-8091-exec-2] c.b.e.services.EmployeePayrollService    : Emp Data:EmployeePayrollData [employeeId=0, name=null, salary=0, gender=null, startDate=null, note=null, profilePic=null, department=null]
+2021-06-26 08:15:25.926  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on DESKTOP-RLRGP4P with PID 14276 (C:\Users\ashok\EmployeePayrollApp\target\classes started by ashok in C:\Users\ashok\EmployeePayrollApp)
+2021-06-26 08:15:25.927 DEBUG 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-26 08:15:25.927  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-26 08:15:26.505  WARN 14276 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-26 08:15:26.856  WARN 14276 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-26 08:15:27.029  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.152 seconds (JVM running for 157.399)
+2021-06-26 08:15:27.034  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll started in COMMON Environment
+2021-06-26 08:15:27.034  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is root 
+2021-06-26 08:16:12.783  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on DESKTOP-RLRGP4P with PID 14276 (C:\Users\ashok\EmployeePayrollApp\target\classes started by ashok in C:\Users\ashok\EmployeePayrollApp)
+2021-06-26 08:16:12.784 DEBUG 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-26 08:16:12.784  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-26 08:16:13.294  WARN 14276 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-26 08:16:13.599  WARN 14276 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-26 08:16:13.748  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.004 seconds (JVM running for 204.117)
+2021-06-26 08:16:13.753  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll started in COMMON Environment
+2021-06-26 08:16:13.753  INFO 14276 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is root 
+2021-06-26 08:16:31.181  WARN 14276 --- [http-nio-8091-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2021-06-26 08:18:37.960 DEBUG 14276 --- [http-nio-8091-exec-8] c.b.e.c.EmployeePayrollController        : Employee DTO:EmployeePayrollDTO(name=Ashok, salary=35000, gender=male, startDate=2020-12-31, note=software engineer, profilePic=../assets/profile-images/Ellipse -3.png, department=Developer)
+2021-06-26 08:18:37.961 DEBUG 14276 --- [http-nio-8091-exec-8] c.b.e.services.EmployeePayrollService    : Emp Data:EmployeePayrollData(employeeId=0, name=null, salary=0, gender=null, startDate=null, note=null, profilePic=null, department=null)
+2021-06-26 09:01:58.950  WARN 14276 --- [HikariPool-4 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Thread starvation or clock leap detected (housekeeper delta=40m15s447ms103µs).
+2021-06-26 09:16:20.766 DEBUG 14276 --- [http-nio-8091-exec-10] c.b.e.c.EmployeePayrollController        : Employee DTO:EmployeePayrollDTO(name=Sneha, salary=35000, gender=male, startDate=2020-12-31, note=software engineer, profilePic=../assets/profile-images/Ellipse -3.png, department=Sales )
+2021-06-26 09:16:20.882 DEBUG 14276 --- [http-nio-8091-exec-10] c.b.e.services.EmployeePayrollService    : Emp Data:EmployeePayrollData(employeeId=0, name=null, salary=0, gender=null, startDate=null, note=null, profilePic=null, department=null)
