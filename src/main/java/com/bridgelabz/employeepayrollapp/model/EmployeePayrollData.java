@@ -1,13 +1,17 @@
 package com.bridgelabz.employeepayrollapp.model;
 
 import java.time.LocalDate;
-import java.util.List;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
 
 import lombok.Data;
 
 public @Data class EmployeePayrollData {
+
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int employeeId;
 	private String name;
 	private long salary;
